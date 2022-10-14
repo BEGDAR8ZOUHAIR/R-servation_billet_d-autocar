@@ -8,47 +8,47 @@ const TripSchema = new mongoose.Schema({
     },
     departureTime: {
         type: Date,
-        // required: true
+        required: true
     },
     tripTime: {
         type: Date,
-        // required: true
+        required: true
     },
     tripDistance: {
         type: Number,
-        // required: true
+        required: true
     },
     tripCost: {
         type: Number,
-        // required: true
+        required: true
     },
     tripStatus: {
         type: String,
-        // required: true
+        required: true
     },
     tripType: {
         type: String,
-        // required: true
+        required: true
     },
     cityDepart: {
         type: String,
-        // required: true
+        required: true
     },
     cityArrival: {
         type: String,
-        // required: true
+        required: true
     },
     timeArrival: {
         type: Date,
-        // required: true
+        required: true
     },
     timeDeparture: {
         type: Date,
-        // required: true
+        required: true
     },
     description: {
         type: String,
-        // required: true
+        required: true
     },
     bus: {
         type:[String],
