@@ -4,7 +4,7 @@ Le projet final intitul√© Bus Booking System est une option alternative au syst√
 ## use mongoos to connect to mongo db
 
 ## conception UML 
- -[diagramme de classe]: https://lucid.app/lucidchart/b12551d8-9f79-4311-8239-7f6de8404318/edit?invitationId=inv_ac8bfdca-bc90-47fe-9004-4097c031c29c&page=0_0#
+ -diagramme de classe: https://lucid.app/lucidchart/b12551d8-9f79-4311-8239-7f6de8404318/edit?invitationId=inv_ac8bfdca-bc90-47fe-9004-4097c031c29c&page=0_0#
 
 
 
