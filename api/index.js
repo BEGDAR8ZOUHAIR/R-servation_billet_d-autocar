@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 // var cors = require('cors')
 import authRoutes from "./routes/auth.js"; 
 import usersRoutes from "./routes/users.js"; 
-import busRoutes from "./routes/bus.js"; 
+// import busRoutes from "./routes/bus.js"; 
 import tripRoutes from "./routes/trip.js"; 
 const app = Express();
 dotenv.config();
@@ -17,8 +17,8 @@ const connect = async () => {
 try{
     await mongoose.connect(process.env.MONGO);
     console.log("Connected to MongoDB");
-} catch (error) {
-  throw error;
+} catch (err) {
+  throw err;
     }
 };
 
@@ -29,11 +29,11 @@ mongoose.connection.on("disconnected", () => {
 //middleware
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
-app.use("/api/bus", busRoutes);
+// app.use("/api/bus", busRoutes);
 app.use("/api/trip", tripRoutes);
 app.use("/api/users", usersRoutes);
 
-app.use((err,req, res) =>
+app.use((err,req, res,next) =>
 {
     const errorStatus = err.status || 500;
     const errorMessage = err.message || "Something went wrong";
