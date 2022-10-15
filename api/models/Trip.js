@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-
 const TripSchema = new mongoose.Schema({
     arrivalTime: {
         type: Date,
