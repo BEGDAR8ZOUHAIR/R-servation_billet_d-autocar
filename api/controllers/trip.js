@@ -1,4 +1,5 @@
 import Trip from '../models/trip.js';
+import Bus from '../models/bus.js';
 
 
 // CREATE

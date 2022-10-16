@@ -1,6 +1,7 @@
 import express from 'express';
-// import Trip from '../models/trip.js';
+import Trip from '../models/trip.js';
 import { creatTrip, getAllTrips, getTrip, updateTrip, deleteTrip } from '../controllers/trip.js';
+// import { verifyAdmin } from "../utils/verifyToken.js";
 
 const router = express.Router();
 

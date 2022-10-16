@@ -6,8 +6,8 @@ import cookieParser from "cookie-parser";
 // var cors = require('cors')
 import authRoutes from "./routes/auth.js"; 
 import usersRoutes from "./routes/users.js"; 
-// import busRoutes from "./routes/bus.js"; 
 import tripRoutes from "./routes/trip.js"; 
+import bussRoutes from "./routes/buss.js"; 
 const app = Express();
 dotenv.config();
 // app.use(cors());
@@ -17,8 +17,9 @@ const connect = async () => {
 try{
     await mongoose.connect(process.env.MONGO);
     console.log("Connected to MongoDB");
-} catch (err) {
-  throw err;
+    } catch (err)
+    {
+       throw err;
     }
 };
 
@@ -29,9 +30,9 @@ mongoose.connection.on("disconnected", () => {
 //middleware
 app.use(cookieParser());
 app.use("/api/auth", authRoutes);
-// app.use("/api/bus", busRoutes);
 app.use("/api/trip", tripRoutes);
 app.use("/api/users", usersRoutes);
+app.use("/api/buss", bussRoutes);
 
 app.use((err,req, res,next) =>
 {

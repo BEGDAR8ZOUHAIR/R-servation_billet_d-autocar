@@ -49,9 +49,10 @@ const TripSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    bus: {
+    buss: {
         type:[String],
     }
    
 }); 
+
 export default mongoose.model('Trip', TripSchema);
