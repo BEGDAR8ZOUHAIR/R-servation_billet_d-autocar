@@ -1,14 +1,14 @@
 {
   "name": "resevationbus",
   "version": "1.0.0",
-  "description": "",
+  "description": "booking bus ticket express js api  and react js",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "zouhair begdar",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
