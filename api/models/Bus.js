@@ -5,13 +5,17 @@ const BusSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    arrivalTime: {
-        type: Date,
+     arrivalTime: {
+         type: Date,
         required: true,
+         
+       
     },
     departureTime: {
         type: Date,
         required: true,
+
+       
     },
     maxPlace: {
         type: Number,

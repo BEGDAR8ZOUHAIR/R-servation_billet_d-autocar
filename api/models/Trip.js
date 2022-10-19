@@ -2,19 +2,15 @@ import mongoose from 'mongoose';
 
 const TripSchema = new mongoose.Schema({
     arrivalTime: {
-        type: Date,
-        // required: true
+        type: [Date],
+       
     },
     departureTime: {
-        type: Date,
-        required: true
-    },
-    tripTime: {
-        type: Date,
-        required: true
+        type: [Date],
+       
     },
     tripDistance: {
-        type: Number,
+        type: String,
         required: true
     },
     tripCost: {
@@ -35,14 +31,6 @@ const TripSchema = new mongoose.Schema({
     },
     cityArrival: {
         type: String,
-        required: true
-    },
-    timeArrival: {
-        type: Date,
-        required: true
-    },
-    timeDeparture: {
-        type: Date,
         required: true
     },
     description: {

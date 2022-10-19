@@ -15,7 +15,10 @@ export const createBus = async (req, res ,next) => {
     const savedBus = await newBus.save();
     try {
       await Trip.findByIdAndUpdate(tripId, {
-        $push: { buss: savedBus._id },
+        $push: { buss: savedBus.title },
+        $push: { arrivalTime: savedBus.arrivalTime },
+        $push: { departureTime: savedBus.departureTime },
+        
       });
     } catch (err) {
       next(err);
@@ -29,7 +32,10 @@ export const createBus = async (req, res ,next) => {
 export const updateBus = async (req, res,next) => {
   try {
     const updatedBus = await Bus.findByIdAndUpdate(
-      req.params.id,
+      req.params.title,
+      req.params.arrivalTime,
+      req.params.departureTime,
+
       { $set: req.body },
       { new: true }
     );
@@ -42,10 +48,12 @@ export const updateBus = async (req, res,next) => {
 export const deleteBus= async (req, res ,next) => {
   const tripId = req.params.tripid;
   try {
-    await Bus.findByIdAndDelete(req.params.id);
+    await Bus.findByIdAndDelete(req.params.title, req.params.arrivalTime, req.params.departureTime);
     try {
       await Trip.findByIdAndUpdate(tripId, {
-        $pull: { buss: req.params.id },
+        $pull: { buss: req.params.title },
+        $pull: { arrivalTime: req.params.arrivalTime },
+        $pull: { departureTime: req.params.departureTime },
       });
     } catch (err) {
       next(err);
@@ -57,7 +65,8 @@ export const deleteBus= async (req, res ,next) => {
 };
 export const getBus = async (req, res, next) => {
   try {
-    const bus = await Bus.findById(req.params.id);
+    const bus = await Bus.findById(req.params.title, req.params.arrivalTime, req.params.departureTime);
+    
     res.status(200).json(bus);
   } catch (err) {
     next(err);
