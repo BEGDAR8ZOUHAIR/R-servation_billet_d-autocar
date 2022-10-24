@@ -1,13 +1,17 @@
 import mongoose from 'mongoose';
 
 const TripSchema = new mongoose.Schema({
-    arrivalTime: {
-        type: [Date],
-       
-    },
     departureTime: {
-        type: [Date],
-       
+        type: String,
+        required: true
+    },
+    arrivalTime: {
+        type: String,
+        required: true
+    },
+    departureDate: {
+        type: String,
+        required: true
     },
     tripDistance: {
         type: String,
@@ -44,3 +48,4 @@ const TripSchema = new mongoose.Schema({
 }); 
 
 export default mongoose.model('Trip', TripSchema);
+

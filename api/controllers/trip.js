@@ -4,9 +4,9 @@ import Bus from '../models/bus.js';
 
 // CREATE
 export const creatTrip = async (req, res) => {
-    const newTrip = new Trip(req.body);
+    // const newTrip = new Trip(req.body);
     try {
-        const savedTrip = await newTrip.save();
+        const savedTrip = await Trip.create(req.body);
         res.status(200).json(savedTrip);
     } catch (error)
     {

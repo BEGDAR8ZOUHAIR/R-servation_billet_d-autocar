@@ -5,21 +5,12 @@ const BusSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-     arrivalTime: {
-         type: Date,
-        required: true,
-         
-       
-    },
-    departureTime: {
-        type: Date,
-        required: true,
-
-       
-    },
     maxPlace: {
         type: Number,
+        max: 50,
         required: true,
+
+        
     },
     busCost: {
         type: Number,
@@ -29,9 +20,10 @@ const BusSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    busNumber: [{ number: Number, unavailableDate: { type: [Date] }} ],
+    busNumber: {
+        type: Number,
+        require: true,
+     },
 },
-    { timestamps: true }
 ); 
- 
 export default mongoose.model("Bus", BusSchema);

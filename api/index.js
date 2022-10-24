@@ -7,7 +7,8 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.js"; 
 import usersRoutes from "./routes/users.js"; 
 import tripRoutes from "./routes/trip.js"; 
-import bussRoutes from "./routes/buss.js"; 
+import bussRoutes from "./routes/buss.js";
+// set up express app 
 const app = Express();
 dotenv.config();
 // app.use(cors());
@@ -27,8 +28,8 @@ mongoose.connection.on("disconnected", () => {
     console.log("MongoDB disconnected");
 });
 
-//middleware
 app.use(cookieParser());
+//middleware
 app.use("/api/auth", authRoutes);
 app.use("/api/trip", tripRoutes);
 app.use("/api/users", usersRoutes);
@@ -46,6 +47,7 @@ app.use((err,req, res,next) =>
 });
 
 const port = process.env.PORT || 8000;
+// listen for the server
 app.listen(port, () =>
 {
     connect();
